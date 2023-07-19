@@ -39,7 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api_app',
     'rest_framework',
+    'rest_framework_simplejwt',
+    'login_app',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
